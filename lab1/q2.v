@@ -1,0 +1,12 @@
+module q2 (input a, b, c, d,
+    output c_not, f);
+
+    wire w0, w1, w2, w3;
+
+    not (c_not, c);
+
+    and (w0, a, b), (w1, c_not, d);
+    or (w2, w0, c), (w3, b, w1);
+
+    and (f, w2, w3);
+endmodule

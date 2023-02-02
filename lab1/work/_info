@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/18.1
+vq1
+Z0 !s110 1675241400
+!i10b 1
+!s100 LoMbg6_jRg:V0c;B52AcU1
+IjXXEWV<b=YBMz]MOR94za3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/chada/OneDrive/Desktop/modelSim
+w1675201779
+8C:/Users/chada/OneDrive/Desktop/modelSim/q1.v
+FC:/Users/chada/OneDrive/Desktop/modelSim/q1.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1675241400.000000
+!s107 C:/Users/chada/OneDrive/Desktop/modelSim/q1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/chada/OneDrive/Desktop/modelSim/q1.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vq2
+R0
+!i10b 1
+!s100 :ga[?P^29dW<:1CSzD[WD2
+I^aUHEzPJf4_V6gGmP[hcg2
+R1
+R2
+w1675241383
+8C:/Users/chada/OneDrive/Desktop/modelSim/q2.v
+FC:/Users/chada/OneDrive/Desktop/modelSim/q2.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/chada/OneDrive/Desktop/modelSim/q2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/chada/OneDrive/Desktop/modelSim/q2.v|
+!i113 1
+R5
+R6
+vq3
+!s110 1675244929
+!i10b 1
+!s100 ;hXb<0>Rj0M<^Y1Ed1FPN1
+I=C[KcoeBLC0gi6NSI0C8S0
+R1
+R2
+w1675244909
+8C:/Users/chada/OneDrive/Desktop/modelSim/q3.v
+FC:/Users/chada/OneDrive/Desktop/modelSim/q3.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1675244929.000000
+!s107 C:/Users/chada/OneDrive/Desktop/modelSim/q3.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/chada/OneDrive/Desktop/modelSim/q3.v|
+!i113 1
+R5
+R6
