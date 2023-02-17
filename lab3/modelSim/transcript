@@ -1,0 +1,12 @@
+# Compile of lab3_behavioral.v was successful.
+vsim -gui work.lab3_behavioral
+# vsim -gui work.lab3_behavioral 
+# Start time: 09:38:55 on Feb 17,2023
+# Loading work.lab3_behavioral
+add wave -position insertpoint sim:/lab3_behavioral/*
+force -freeze sim:/lab3_behavioral/A 0 0, 1 {200 ps} -r 400
+force -freeze sim:/lab3_behavioral/B 0 0, 1 {100 ps} -r 200
+force -freeze sim:/lab3_behavioral/C 0 0, 1 {50 ps} -r 100
+run
+# End time: 09:42:09 on Feb 17,2023, Elapsed time: 0:03:14
+# Errors: 0, Warnings: 2
