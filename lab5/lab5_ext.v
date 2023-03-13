@@ -1,9 +1,15 @@
+/*
 module segment7input3 (led, A, B, C);
   output reg led;
   input A, B, C;
 
+  assign [2:0] sig;
+  sig[0] = A;
+  sig[1] = B;
+  sig[2] = C;
+
   always @ (*)
-    case(A | B | C)
+    case(sig)
         4'b0000 : led=7'b1111110;       //input=0
         4'b0001 : led=7'b0110000;       //input=1
         4'b0010 : led=7'b1101101;       //input=2
@@ -17,6 +23,7 @@ module segment7input3 (led, A, B, C);
 
 
 endmodule
+*/
 
 module segment7input4 (a, b, c, d, e, f, g, A, B, C, D);
   output a, b, c, d, e, f, g;
@@ -33,11 +40,13 @@ module segment7input4 (a, b, c, d, e, f, g, A, B, C, D);
 endmodule
 
 module segment7hex (led, A, B, C, D);
-  output reg led;
+  output reg [1:7] led;
   input A, B, C, D;
 
+  wire [3:0] sig = {D, C, B, A};
+
     always @ (*)
-    case(A | B | C | D)
+    case(sig)
         4'b0000 : led=7'b1111110;
         4'b0001 : led=7'b0110000;
         4'b0010 : led=7'b1101101;

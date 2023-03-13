@@ -14,8 +14,8 @@
     OrGate - 51 times
     Output - 76 times
     AndGate - 72 times
-    NotGate - 32 times
-    ConstantVal - 3 times
+    NotGate - 34 times
+    ConstantVal - 7 times
     Multiplexer - 7 times
     NorGate - 5 times
     NandGate - 2 times
@@ -109,7 +109,7 @@ endmodule
 module bcd2bin(a, b, c, d, e, f, g, A, B, C, D);
   output a,  b,  c,  d,  e,  f,  g;
   input A, B, C, D;
-  wire or_2_out, and_6_out, or_3_out, and_3_out, or_1_out, and_1_out, or_0_out, not_3_out, and_15_out, or_6_out, and_12_out, or_5_out, and_10_out, and_9_out, or_4_out, and_8_out, and_7_out, and_4_out, and_2_out, and_0_out, and_13_out, and_5_out, not_2_out, and_14_out, and_11_out, not_1_out, not_0_out;
+  wire or_2_out, and_6_out, or_3_out, and_3_out, or_1_out, and_1_out, or_0_out, not_3_out, and_15_out, or_6_out, and_12_out, or_5_out, and_10_out, and_9_out, or_4_out, and_8_out, and_7_out, and_4_out, and_2_out, and_0_out, and_13_out, and_5_out, not_2_out, and_14_out, and_11_out, not_1_out, not_0_out, _C_, not_4_out;
   assign or_2_out = not_2_out | D | B;
   assign c = or_2_out;
   assign and_6_out = B & not_2_out & D;
@@ -144,6 +144,8 @@ module bcd2bin(a, b, c, d, e, f, g, A, B, C, D);
   assign and_11_out = B & not_2_out;
   assign not_1_out = ~B;
   assign not_0_out = ~A;
+  assign _C_ = 1'b1;
+  assign not_4_out = ~_C_;
 endmodule
 
 module segment7input3(a, b, c, d, e, f, g, A, B, C);
@@ -178,32 +180,32 @@ module segment7input3(a, b, c, d, e, f, g, A, B, C);
   assign \A'_out  = ~A;
 endmodule
 
-module segment7input4(a, b, c, d, e, f, g, A, B, C, D);
-  output a,  b,  c,  d,  e,  f,  g;
+module segment7input4(A, B, C, D, E, F, G, A, B, C, D);
+  output A,  B,  C,  D,  E,  F,  G;
   input A, B, C, D;
   wire \C'+D+B+AD'_out , \AD'_out , \BC'D_out , \A+BC'D+CD'+B'C_out , \A+BC'D+CD'+B'C+B'D'_out , CD_out, \A+C'D'+CD+A'B'_out , BD_out, \A+C+BD+B'D'_out , \D"_out , \BD'_out , \A+C'D'+BC'+BD'_out , \CD'_out , \A+BC'+CD'+B'C_out , \AC+AB+CD'+B'D'_out , \C"D"_out , \B'D'_out , AC_out, \B'C_out , \C"_out , \BC'_out , AB_out, \B'_out , \A'B"_out , \A'_out ;
   assign \C'+D+B+AD'_out  = \C"_out  | D | B | \AD'_out ;
-  assign c = \C'+D+B+AD'_out ;
+  assign C = \C'+D+B+AD'_out ;
   assign \AD'_out  = A & D;
   assign \BC'D_out  = \BC'_out  & D;
   assign \A+BC'D+CD'+B'C_out  = A | \BC'D_out  | \CD'_out  | \B'C_out ;
   assign \A+BC'D+CD'+B'C+B'D'_out  = \B'D'_out  | \A+BC'D+CD'+B'C_out ;
-  assign d = \A+BC'D+CD'+B'C+B'D'_out ;
+  assign D = \A+BC'D+CD'+B'C+B'D'_out ;
   assign CD_out = C & D;
   assign \A+C'D'+CD+A'B'_out  = A | \C"D"_out  | CD_out | \A'B"_out ;
-  assign b = \A+C'D'+CD+A'B'_out ;
+  assign B = \A+C'D'+CD+A'B'_out ;
   assign BD_out = B & D;
   assign \A+C+BD+B'D'_out  = A | C | BD_out | \B'D'_out ;
-  assign a = \A+C+BD+B'D'_out ;
+  assign A = \A+C+BD+B'D'_out ;
   assign \D"_out  = ~D;
   assign \BD'_out  = B & \D"_out ;
   assign \A+C'D'+BC'+BD'_out  = A | \C"D"_out  | \BC'_out  | \BD'_out ;
-  assign f = \A+C'D'+BC'+BD'_out ;
+  assign F = \A+C'D'+BC'+BD'_out ;
   assign \CD'_out  = C & \D"_out ;
   assign \A+BC'+CD'+B'C_out  = A | \BC'_out  | \CD'_out  | \B'C_out ;
-  assign g = \A+BC'+CD'+B'C_out ;
+  assign G = \A+BC'+CD'+B'C_out ;
   assign \AC+AB+CD'+B'D'_out  = AC_out | AB_out | \CD'_out  | \B'D'_out ;
-  assign e = \AC+AB+CD'+B'D'_out ;
+  assign E = \AC+AB+CD'+B'D'_out ;
   assign \C"D"_out  = \C"_out  & \D"_out ;
   assign \B'D'_out  = \B'_out  & \D"_out ;
   assign AC_out = A & C;
@@ -232,25 +234,25 @@ module bin2oct(a10, a20, a30, b10, b20, b30, c10, c20, c30, a1, a2, a3, b1, b2, 
   assign c30 = c3;
 endmodule
 
-module mux(A, B, C, D, E, F, G, G1, F1, E1, D1, C1, B1, A1, G2, F2, E2, D2, C2, B2, A2, G3, F3, E3, D3, C3, B3, A3, Selector);
-  output A,  B,  C,  D,  E,  F,  G;
+module mux(a, b, c, d, e, f, g, G1, F1, E1, D1, C1, B1, A1, G2, F2, E2, D2, C2, B2, A2, G3, F3, E3, D3, C3, B3, A3, Selector);
+  output a,  b,  c,  d,  e,  f,  g;
   input G1, F1, E1, D1, C1, B1, A1, G2, F2, E2, D2, C2, B2, A2, G3, F3, E3, D3, C3, B3, A3;
   input [1:0] Selector;
   wire G_out, F_out, E_out, D_out, C_out, B_out, A_out;
   Multiplexer4 G(G_out, , G1, G2, G3, Selector);
-  assign G = G_out;
+  assign g = G_out;
   Multiplexer4 F(F_out, , F1, F2, F3, Selector);
-  assign F = F_out;
+  assign f = F_out;
   Multiplexer4 E(E_out, , E1, E2, E3, Selector);
-  assign E = E_out;
+  assign e = E_out;
   Multiplexer4 D(D_out, , D1, D2, D3, Selector);
-  assign D = D_out;
+  assign d = D_out;
   Multiplexer4 C(C_out, , C1, C2, C3, Selector);
-  assign C = C_out;
+  assign c = C_out;
   Multiplexer4 B(B_out, , B1, B2, B3, Selector);
-  assign B = B_out;
+  assign b = B_out;
   Multiplexer4 A(A_out, , A1, A2, A3, Selector);
-  assign A = A_out;
+  assign a = A_out;
 endmodule
 
 module segment7hex(f, g, a, b, c, d, e, A, B, C, D);
@@ -368,7 +370,7 @@ endmodule
 module dabble(a, b, c, d, A, B, C, D);
   output a,  b,  c,  d;
   input A, B, C, D;
-  wire and_7_out, or_3_out, and_5_out, or_2_out, and_3_out, or_1_out, and_0_out, or_0_out, not_3_out, and_9_out, and_8_out, and_6_out, and_2_out, and_4_out, and_1_out, not_2_out, not_1_out, not_0_out;
+  wire and_7_out, or_3_out, and_5_out, or_2_out, and_3_out, or_1_out, and_0_out, or_0_out, not_3_out, and_9_out, and_8_out, and_6_out, and_2_out, and_4_out, and_1_out, not_2_out, not_1_out, not_0_out, _C_, not_4_out;
   assign and_7_out = not_0_out & not_1_out & D;
   assign or_3_out = and_7_out | and_8_out | and_9_out;
   assign d = or_3_out;
@@ -391,13 +393,15 @@ module dabble(a, b, c, d, A, B, C, D);
   assign not_2_out = ~C;
   assign not_1_out = ~B;
   assign not_0_out = ~A;
+  assign _C_ = 1'b1;
+  assign not_4_out = ~_C_;
 endmodule
 
 
 module dibbleDouble(Hun_3, Hun_2, Hun_1, Hun_0, Ten_3, Ten_2, Ten_1, Ten_0, Ones_3, Ones_2, Ones_1, Ones_0, A, B, C, D, E, F, G, H);
   output Hun_3,  Hun_2,  Hun_1,  Hun_0,  Ten_3,  Ten_2,  Ten_1,  Ten_0,  Ones_3,  Ones_2,  Ones_1,  Ones_0;
   input A, B, C, D, E, F, G, H;
-  wire dabble_6_out_0, dabble_6_out_1, dabble_6_out_2, dabble_6_out_3, dabble_4_out_0, dabble_4_out_1, dabble_4_out_2, dabble_4_out_3, dabble_5_out_0, dabble_5_out_1, dabble_5_out_2, dabble_5_out_3, dabble_2_out_0, dabble_2_out_1, dabble_2_out_2, dabble_2_out_3, dabble_3_out_0, dabble_3_out_1, dabble_3_out_2, dabble_3_out_3, dabble_1_out_0, dabble_1_out_1, dabble_1_out_2, dabble_1_out_3, dabble_0_out_0, dabble_0_out_1, dabble_0_out_2, dabble_0_out_3, const_1, const_0;
+  wire dabble_6_out_0, dabble_6_out_1, dabble_6_out_2, dabble_6_out_3, dabble_4_out_0, dabble_4_out_1, dabble_4_out_2, dabble_4_out_3, dabble_5_out_0, dabble_5_out_1, dabble_5_out_2, dabble_5_out_3, dabble_2_out_0, dabble_2_out_1, dabble_2_out_2, dabble_2_out_3, dabble_3_out_0, dabble_3_out_1, dabble_3_out_2, dabble_3_out_3, dabble_1_out_0, dabble_1_out_1, dabble_1_out_2, dabble_1_out_3, dabble_0_out_0, dabble_0_out_1, dabble_0_out_2, dabble_0_out_3, const_3, const_2, const_1, const_0;
   assign Ones_0 = H;
   dabble dabble_6(dabble_6_out_0, dabble_6_out_1, dabble_6_out_2, dabble_6_out_3, dabble_4_out_1, dabble_4_out_2, dabble_4_out_3, G);
   assign Ones_1 = dabble_6_out_3;
@@ -411,10 +415,12 @@ module dibbleDouble(Hun_3, Hun_2, Hun_1, Hun_0, Ten_3, Ten_2, Ten_1, Ten_0, Ones
   assign Ten_3 = dabble_5_out_1;
   assign Hun_0 = dabble_5_out_0;
   dabble dabble_2(dabble_2_out_0, dabble_2_out_1, dabble_2_out_2, dabble_2_out_3, dabble_1_out_1, dabble_1_out_2, dabble_1_out_3, E);
-  dabble dabble_3(dabble_3_out_0, dabble_3_out_1, dabble_3_out_2, dabble_3_out_3, , dabble_0_out_0, dabble_1_out_0, dabble_2_out_0);
+  dabble dabble_3(dabble_3_out_0, dabble_3_out_1, dabble_3_out_2, dabble_3_out_3, const_3, dabble_0_out_0, dabble_1_out_0, dabble_2_out_0);
   assign Hun_1 = dabble_3_out_0;
   dabble dabble_1(dabble_1_out_0, dabble_1_out_1, dabble_1_out_2, dabble_1_out_3, dabble_0_out_1, dabble_0_out_2, dabble_0_out_3, D);
-  dabble dabble_0(dabble_0_out_0, dabble_0_out_1, dabble_0_out_2, dabble_0_out_3, , A, B, C);
+  dabble dabble_0(dabble_0_out_0, dabble_0_out_1, dabble_0_out_2, dabble_0_out_3, const_2, A, B, C);
+  assign const_3 = 1'b0;
+  assign const_2 = 1'b0;
   assign const_1 = 1'b0;
   assign Hun_2 = const_1;
   assign const_0 = 1'b0;
@@ -432,33 +438,33 @@ endmodule
 module main(H, G, F, E, D, C, B, A, Selector, Point);
   input H, G, F, E, D, C, B, A, Point;
   input [1:0] Selector;
-  wire Multiplexer_Module_6_out_0, Multiplexer_Module_6_out_1, Multiplexer_Module_6_out_2, Multiplexer_Module_6_out_3, Multiplexer_Module_6_out_4, Multiplexer_Module_6_out_5, Multiplexer_Module_6_out_6, Multiplexer_Module_5_out_0, Multiplexer_Module_5_out_1, Multiplexer_Module_5_out_2, Multiplexer_Module_5_out_3, Multiplexer_Module_5_out_4, Multiplexer_Module_5_out_5, Multiplexer_Module_5_out_6, Multiplexer_Module_4_out_0, Multiplexer_Module_4_out_1, Multiplexer_Module_4_out_2, Multiplexer_Module_4_out_3, Multiplexer_Module_4_out_4, Multiplexer_Module_4_out_5, Multiplexer_Module_4_out_6, dibbleDouble_10_out_0, dibbleDouble_10_out_1, dibbleDouble_10_out_2, dibbleDouble_10_out_3, dibbleDouble_10_out_4, dibbleDouble_10_out_5, dibbleDouble_10_out_6, dibbleDouble_10_out_7, dibbleDouble_10_out_8, dibbleDouble_10_out_9, dibbleDouble_10_out_10, dibbleDouble_10_out_11, \segment7-input4_11_out_0 , \segment7-input4_11_out_1 , \segment7-input4_11_out_2 , \segment7-input4_11_out_3 , \segment7-input4_11_out_4 , \segment7-input4_11_out_5 , \segment7-input4_11_out_6 , \segment7-input4_12_out_0 , \segment7-input4_12_out_1 , \segment7-input4_12_out_2 , \segment7-input4_12_out_3 , \segment7-input4_12_out_4 , \segment7-input4_12_out_5 , \segment7-input4_12_out_6 , \segment7-input4_13_out_0 , \segment7-input4_13_out_1 , \segment7-input4_13_out_2 , \segment7-input4_13_out_3 , \segment7-input4_13_out_4 , \segment7-input4_13_out_5 , \segment7-input4_13_out_6 , BinarytoHex_8_out_0, BinarytoHex_8_out_1, BinarytoHex_8_out_2, BinarytoHex_8_out_3, BinarytoHex_8_out_4, BinarytoHex_8_out_5, BinarytoHex_8_out_6, BinarytoHex_8_out_7, \7segment-HexConverter_7_out_0 , \7segment-HexConverter_7_out_1 , \7segment-HexConverter_7_out_2 , \7segment-HexConverter_7_out_3 , \7segment-HexConverter_7_out_4 , \7segment-HexConverter_7_out_5 , \7segment-HexConverter_7_out_6 , \7segment-HexConverter_9_out_0 , \7segment-HexConverter_9_out_1 , \7segment-HexConverter_9_out_2 , \7segment-HexConverter_9_out_3 , \7segment-HexConverter_9_out_4 , \7segment-HexConverter_9_out_5 , \7segment-HexConverter_9_out_6 , BinarytoOctal_0_out_0, BinarytoOctal_0_out_1, BinarytoOctal_0_out_2, BinarytoOctal_0_out_3, BinarytoOctal_0_out_4, BinarytoOctal_0_out_5, BinarytoOctal_0_out_6, BinarytoOctal_0_out_7, BinarytoOctal_0_out_8, \7segment-3input_3_out_0 , \7segment-3input_3_out_1 , \7segment-3input_3_out_2 , \7segment-3input_3_out_3 , \7segment-3input_3_out_4 , \7segment-3input_3_out_5 , \7segment-3input_3_out_6 , \7segment-3input_2_out_0 , \7segment-3input_2_out_1 , \7segment-3input_2_out_2 , \7segment-3input_2_out_3 , \7segment-3input_2_out_4 , \7segment-3input_2_out_5 , \7segment-3input_2_out_6 , \7segment-3input_1_out_0 , \7segment-3input_1_out_1 , \7segment-3input_1_out_2 , \7segment-3input_1_out_3 , \7segment-3input_1_out_4 , \7segment-3input_1_out_5 , \7segment-3input_1_out_6 ;
+  wire mux_6_out_0, mux_6_out_1, mux_6_out_2, mux_6_out_3, mux_6_out_4, mux_6_out_5, mux_6_out_6, mux_4_out_0, mux_4_out_1, mux_4_out_2, mux_4_out_3, mux_4_out_4, mux_4_out_5, mux_4_out_6, dibbleDouble_10_out_0, dibbleDouble_10_out_1, dibbleDouble_10_out_2, dibbleDouble_10_out_3, dibbleDouble_10_out_4, dibbleDouble_10_out_5, dibbleDouble_10_out_6, dibbleDouble_10_out_7, dibbleDouble_10_out_8, dibbleDouble_10_out_9, dibbleDouble_10_out_10, dibbleDouble_10_out_11, segment7input4_11_out_0, segment7input4_11_out_1, segment7input4_11_out_2, segment7input4_11_out_3, segment7input4_11_out_4, segment7input4_11_out_5, segment7input4_11_out_6, segment7input4_12_out_0, segment7input4_12_out_1, segment7input4_12_out_2, segment7input4_12_out_3, segment7input4_12_out_4, segment7input4_12_out_5, segment7input4_12_out_6, segment7input4_13_out_0, segment7input4_13_out_1, segment7input4_13_out_2, segment7input4_13_out_3, segment7input4_13_out_4, segment7input4_13_out_5, segment7input4_13_out_6, bin2hex_8_out_0, bin2hex_8_out_1, bin2hex_8_out_2, bin2hex_8_out_3, bin2hex_8_out_4, bin2hex_8_out_5, bin2hex_8_out_6, bin2hex_8_out_7, segment7hex_1_out_0, segment7hex_1_out_1, segment7hex_1_out_2, segment7hex_1_out_3, segment7hex_1_out_4, segment7hex_1_out_5, segment7hex_1_out_6, segment7hex_9_out_0, segment7hex_9_out_1, segment7hex_9_out_2, segment7hex_9_out_3, segment7hex_9_out_4, segment7hex_9_out_5, segment7hex_9_out_6, bin2oct_0_out_0, bin2oct_0_out_1, bin2oct_0_out_2, bin2oct_0_out_3, bin2oct_0_out_4, bin2oct_0_out_5, bin2oct_0_out_6, bin2oct_0_out_7, bin2oct_0_out_8, segment7input3_3_out_0, segment7input3_3_out_1, segment7input3_3_out_2, segment7input3_3_out_3, segment7input3_3_out_4, segment7input3_3_out_5, segment7input3_3_out_6, segment7input3_2_out_0, segment7input3_2_out_1, segment7input3_2_out_2, segment7input3_2_out_3, segment7input3_2_out_4, segment7input3_2_out_5, segment7input3_2_out_6, segment7input3_1_out_0, segment7input3_1_out_1, segment7input3_1_out_2, segment7input3_1_out_3, segment7input3_1_out_4, segment7input3_1_out_5, segment7input3_1_out_6;
   
       always @ (*)
         $display("SevenSegDisplay:SevenSegDisplay_2.abcdefg. = %b%b%b%b%b%b%b%b}",
-                 Multiplexer_Module_4_out_0, Multiplexer_Module_4_out_1, Multiplexer_Module_4_out_2, Multiplexer_Module_4_out_3, Multiplexer_Module_4_out_4, Multiplexer_Module_4_out_5, Multiplexer_Module_4_out_6, Point);
+                 mux_4_out_0, mux_4_out_1, mux_4_out_2, mux_4_out_3, mux_4_out_4, mux_4_out_5, mux_4_out_6, Point);
   
       always @ (*)
         $display("SevenSegDisplay:SevenSegDisplay_0.abcdefg. = %b%b%b%b%b%b%b%b}",
-                 Multiplexer_Module_6_out_0, Multiplexer_Module_6_out_1, Multiplexer_Module_6_out_2, Multiplexer_Module_6_out_3, Multiplexer_Module_6_out_4, Multiplexer_Module_6_out_5, Multiplexer_Module_6_out_6, Point);
+                 mux_6_out_0, mux_6_out_1, mux_6_out_2, mux_6_out_3, mux_6_out_4, mux_6_out_5, mux_6_out_6, Point);
   
       always @ (*)
         $display("SevenSegDisplay:SevenSegDisplay_1.abcdefg. = %b%b%b%b%b%b%b%b}",
-                 Multiplexer_Module_5_out_0, Multiplexer_Module_5_out_1, Multiplexer_Module_5_out_2, Multiplexer_Module_5_out_3, Multiplexer_Module_5_out_4, Multiplexer_Module_5_out_5, Multiplexer_Module_5_out_6, Point);
-  mux Multiplexer_Module_6(Multiplexer_Module_6_out_0, Multiplexer_Module_6_out_1, Multiplexer_Module_6_out_2, Multiplexer_Module_6_out_3, Multiplexer_Module_6_out_4, Multiplexer_Module_6_out_5, Multiplexer_Module_6_out_6, \7segment-3input_3_out_6 , \7segment-3input_3_out_5 , \7segment-3input_3_out_4 , \7segment-3input_3_out_3 , \7segment-3input_3_out_2 , \7segment-3input_3_out_1 , \7segment-3input_3_out_0 , , , , , , , , \segment7-input4_13_out_6 , \segment7-input4_13_out_5 , \segment7-input4_13_out_4 , \segment7-input4_13_out_3 , \segment7-input4_13_out_2 , \segment7-input4_13_out_1 , \segment7-input4_13_out_0 , Selector);
-  mux Multiplexer_Module_5(Multiplexer_Module_5_out_0, Multiplexer_Module_5_out_1, Multiplexer_Module_5_out_2, Multiplexer_Module_5_out_3, Multiplexer_Module_5_out_4, Multiplexer_Module_5_out_5, Multiplexer_Module_5_out_6, \7segment-3input_2_out_6 , \7segment-3input_2_out_5 , \7segment-3input_2_out_4 , \7segment-3input_2_out_3 , \7segment-3input_2_out_2 , \7segment-3input_2_out_1 , \7segment-3input_2_out_0 , \7segment-HexConverter_9_out_1 , \7segment-HexConverter_9_out_0 , \7segment-HexConverter_9_out_6 , \7segment-HexConverter_9_out_5 , \7segment-HexConverter_9_out_4 , \7segment-HexConverter_9_out_3 , \7segment-HexConverter_9_out_2 , \segment7-input4_12_out_6 , \segment7-input4_12_out_5 , \segment7-input4_12_out_4 , \segment7-input4_12_out_3 , \segment7-input4_12_out_2 , \segment7-input4_12_out_1 , \segment7-input4_12_out_0 , Selector);
-  mux Multiplexer_Module_4(Multiplexer_Module_4_out_0, Multiplexer_Module_4_out_1, Multiplexer_Module_4_out_2, Multiplexer_Module_4_out_3, Multiplexer_Module_4_out_4, Multiplexer_Module_4_out_5, Multiplexer_Module_4_out_6, \7segment-3input_1_out_6 , \7segment-3input_1_out_5 , \7segment-3input_1_out_4 , \7segment-3input_1_out_3 , \7segment-3input_1_out_2 , \7segment-3input_1_out_1 , \7segment-3input_1_out_0 , \7segment-HexConverter_7_out_1 , \7segment-HexConverter_7_out_0 , \7segment-HexConverter_7_out_6 , \7segment-HexConverter_7_out_5 , \7segment-HexConverter_7_out_4 , \7segment-HexConverter_7_out_3 , \7segment-HexConverter_7_out_2 , \segment7-input4_11_out_6 , \segment7-input4_11_out_5 , \segment7-input4_11_out_4 , \segment7-input4_11_out_3 , \segment7-input4_11_out_2 , \segment7-input4_11_out_1 , \segment7-input4_11_out_0 , Selector);
+                 mux_6_out_0, mux_6_out_1, mux_6_out_2, mux_6_out_3, mux_6_out_4, mux_6_out_5, mux_6_out_6, Point);
+  mux mux_6(mux_6_out_0, mux_6_out_1, mux_6_out_2, mux_6_out_3, mux_6_out_4, mux_6_out_5, mux_6_out_6, segment7input3_3_out_6, segment7input3_3_out_5, segment7input3_3_out_4, segment7input3_3_out_3, segment7input3_3_out_2, segment7input3_3_out_1, segment7input3_3_out_0, , , , , , , , segment7input4_13_out_6, segment7input4_13_out_5, segment7input4_13_out_4, segment7input4_13_out_3, segment7input4_13_out_2, segment7input4_13_out_1, segment7input4_13_out_0, Selector);
+  mux mux_6(mux_6_out_0, mux_6_out_1, mux_6_out_2, mux_6_out_3, mux_6_out_4, mux_6_out_5, mux_6_out_6, segment7input3_2_out_6, segment7input3_2_out_5, segment7input3_2_out_4, segment7input3_2_out_3, segment7input3_2_out_2, segment7input3_2_out_1, segment7input3_2_out_0, segment7hex_9_out_1, segment7hex_9_out_0, segment7hex_9_out_6, segment7hex_9_out_5, segment7hex_9_out_4, segment7hex_9_out_3, segment7hex_9_out_2, segment7input4_12_out_6, segment7input4_12_out_5, segment7input4_12_out_4, segment7input4_12_out_3, segment7input4_12_out_2, segment7input4_12_out_1, segment7input4_12_out_0, Selector);
+  mux mux_4(mux_4_out_0, mux_4_out_1, mux_4_out_2, mux_4_out_3, mux_4_out_4, mux_4_out_5, mux_4_out_6, segment7input3_1_out_6, segment7input3_1_out_5, segment7input3_1_out_4, segment7input3_1_out_3, segment7input3_1_out_2, segment7input3_1_out_1, segment7input3_1_out_0, segment7hex_1_out_1, segment7hex_1_out_0, segment7hex_1_out_6, segment7hex_1_out_5, segment7hex_1_out_4, segment7hex_1_out_3, segment7hex_1_out_2, segment7input4_11_out_6, segment7input4_11_out_5, segment7input4_11_out_4, segment7input4_11_out_3, segment7input4_11_out_2, segment7input4_11_out_1, segment7input4_11_out_0, Selector);
   dibbleDouble dibbleDouble_10(dibbleDouble_10_out_0, dibbleDouble_10_out_1, dibbleDouble_10_out_2, dibbleDouble_10_out_3, dibbleDouble_10_out_4, dibbleDouble_10_out_5, dibbleDouble_10_out_6, dibbleDouble_10_out_7, dibbleDouble_10_out_8, dibbleDouble_10_out_9, dibbleDouble_10_out_10, dibbleDouble_10_out_11, H, G, F, E, D, C, B, A);
-  segment7input4 \segment7-input4_11 (\segment7-input4_11_out_0 , \segment7-input4_11_out_1 , \segment7-input4_11_out_2 , \segment7-input4_11_out_3 , \segment7-input4_11_out_4 , \segment7-input4_11_out_5 , \segment7-input4_11_out_6 , dibbleDouble_10_out_8, dibbleDouble_10_out_9, dibbleDouble_10_out_10, dibbleDouble_10_out_11);
-  segment7input4 \segment7-input4_12 (\segment7-input4_12_out_0 , \segment7-input4_12_out_1 , \segment7-input4_12_out_2 , \segment7-input4_12_out_3 , \segment7-input4_12_out_4 , \segment7-input4_12_out_5 , \segment7-input4_12_out_6 , dibbleDouble_10_out_4, dibbleDouble_10_out_5, dibbleDouble_10_out_6, dibbleDouble_10_out_7);
-  segment7input4 \segment7-input4_13 (\segment7-input4_13_out_0 , \segment7-input4_13_out_1 , \segment7-input4_13_out_2 , \segment7-input4_13_out_3 , \segment7-input4_13_out_4 , \segment7-input4_13_out_5 , \segment7-input4_13_out_6 , dibbleDouble_10_out_0, dibbleDouble_10_out_1, dibbleDouble_10_out_2, dibbleDouble_10_out_3);
-  bin2hex BinarytoHex_8(BinarytoHex_8_out_0, BinarytoHex_8_out_1, BinarytoHex_8_out_2, BinarytoHex_8_out_3, BinarytoHex_8_out_4, BinarytoHex_8_out_5, BinarytoHex_8_out_6, BinarytoHex_8_out_7, C, B, A, H, G, F, E, D);
-  segment7hex \7segment-HexConverter_7 (\7segment-HexConverter_7_out_0 , \7segment-HexConverter_7_out_1 , \7segment-HexConverter_7_out_2 , \7segment-HexConverter_7_out_3 , \7segment-HexConverter_7_out_4 , \7segment-HexConverter_7_out_5 , \7segment-HexConverter_7_out_6 , BinarytoHex_8_out_7, BinarytoHex_8_out_0, BinarytoHex_8_out_1, BinarytoHex_8_out_2);
-  segment7hex \7segment-HexConverter_9 (\7segment-HexConverter_9_out_0 , \7segment-HexConverter_9_out_1 , \7segment-HexConverter_9_out_2 , \7segment-HexConverter_9_out_3 , \7segment-HexConverter_9_out_4 , \7segment-HexConverter_9_out_5 , \7segment-HexConverter_9_out_6 , BinarytoHex_8_out_3, BinarytoHex_8_out_4, BinarytoHex_8_out_5, BinarytoHex_8_out_6);
-  bin2oct BinarytoOctal_0(BinarytoOctal_0_out_0, BinarytoOctal_0_out_1, BinarytoOctal_0_out_2, BinarytoOctal_0_out_3, BinarytoOctal_0_out_4, BinarytoOctal_0_out_5, BinarytoOctal_0_out_6, BinarytoOctal_0_out_7, BinarytoOctal_0_out_8, C, B, A, F, E, D, G, H);
-  segment7input3 \7segment-3input_3 (\7segment-3input_3_out_0 , \7segment-3input_3_out_1 , \7segment-3input_3_out_2 , \7segment-3input_3_out_3 , \7segment-3input_3_out_4 , \7segment-3input_3_out_5 , \7segment-3input_3_out_6 , BinarytoOctal_0_out_8, BinarytoOctal_0_out_7, BinarytoOctal_0_out_6);
-  segment7input3 \7segment-3input_2 (\7segment-3input_2_out_0 , \7segment-3input_2_out_1 , \7segment-3input_2_out_2 , \7segment-3input_2_out_3 , \7segment-3input_2_out_4 , \7segment-3input_2_out_5 , \7segment-3input_2_out_6 , BinarytoOctal_0_out_3, BinarytoOctal_0_out_4, BinarytoOctal_0_out_5);
-  segment7input3 \7segment-3input_1 (\7segment-3input_1_out_0 , \7segment-3input_1_out_1 , \7segment-3input_1_out_2 , \7segment-3input_1_out_3 , \7segment-3input_1_out_4 , \7segment-3input_1_out_5 , \7segment-3input_1_out_6 , BinarytoOctal_0_out_0, BinarytoOctal_0_out_1, BinarytoOctal_0_out_2);
+  segment7input4 segment7input4_11(segment7input4_11_out_0, segment7input4_11_out_1, segment7input4_11_out_2, segment7input4_11_out_3, segment7input4_11_out_4, segment7input4_11_out_5, segment7input4_11_out_6, dibbleDouble_10_out_8, dibbleDouble_10_out_9, dibbleDouble_10_out_10, dibbleDouble_10_out_11);
+  segment7input4 segment7input4_12(segment7input4_12_out_0, segment7input4_12_out_1, segment7input4_12_out_2, segment7input4_12_out_3, segment7input4_12_out_4, segment7input4_12_out_5, segment7input4_12_out_6, dibbleDouble_10_out_4, dibbleDouble_10_out_5, dibbleDouble_10_out_6, dibbleDouble_10_out_7);
+  segment7input4 segment7input4_13(segment7input4_13_out_0, segment7input4_13_out_1, segment7input4_13_out_2, segment7input4_13_out_3, segment7input4_13_out_4, segment7input4_13_out_5, segment7input4_13_out_6, dibbleDouble_10_out_0, dibbleDouble_10_out_1, dibbleDouble_10_out_2, dibbleDouble_10_out_3);
+  bin2hex bin2hex_8(bin2hex_8_out_0, bin2hex_8_out_1, bin2hex_8_out_2, bin2hex_8_out_3, bin2hex_8_out_4, bin2hex_8_out_5, bin2hex_8_out_6, bin2hex_8_out_7, C, B, A, H, G, F, E, D);
+  segment7hex segment7hex_1(segment7hex_1_out_0, segment7hex_1_out_1, segment7hex_1_out_2, segment7hex_1_out_3, segment7hex_1_out_4, segment7hex_1_out_5, segment7hex_1_out_6, bin2hex_8_out_7, bin2hex_8_out_0, bin2hex_8_out_1, bin2hex_8_out_2);
+  segment7hex segment7hex_9(segment7hex_9_out_0, segment7hex_9_out_1, segment7hex_9_out_2, segment7hex_9_out_3, segment7hex_9_out_4, segment7hex_9_out_5, segment7hex_9_out_6, bin2hex_8_out_3, bin2hex_8_out_4, bin2hex_8_out_5, bin2hex_8_out_6);
+  bin2oct bin2oct_0(bin2oct_0_out_0, bin2oct_0_out_1, bin2oct_0_out_2, bin2oct_0_out_3, bin2oct_0_out_4, bin2oct_0_out_5, bin2oct_0_out_6, bin2oct_0_out_7, bin2oct_0_out_8, C, B, A, F, E, D, G, H);
+  segment7input3 segment7input3_3(segment7input3_3_out_0, segment7input3_3_out_1, segment7input3_3_out_2, segment7input3_3_out_3, segment7input3_3_out_4, segment7input3_3_out_5, segment7input3_3_out_6, bin2oct_0_out_8, bin2oct_0_out_7, bin2oct_0_out_6);
+  segment7input3 segment7input3_2(segment7input3_2_out_0, segment7input3_2_out_1, segment7input3_2_out_2, segment7input3_2_out_3, segment7input3_2_out_4, segment7input3_2_out_5, segment7input3_2_out_6, bin2oct_0_out_3, bin2oct_0_out_4, bin2oct_0_out_5);
+  segment7input3 segment7input3_1(segment7input3_1_out_0, segment7input3_1_out_1, segment7input3_1_out_2, segment7input3_1_out_3, segment7input3_1_out_4, segment7input3_1_out_5, segment7input3_1_out_6, bin2oct_0_out_0, bin2oct_0_out_1, bin2oct_0_out_2);
 endmodule
 
 module Multiplexer4(out, in0, in1, in2, in3, sel);

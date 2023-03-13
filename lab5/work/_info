@@ -58,76 +58,48 @@ R10
 R11
 n@134segment7-input4@040
 vbcd2bin
-Z12 !s110 1678117979
+Z12 !s110 1678155259
 !i10b 1
-!s100 9^<>4=?aN4D5XkeS9Ho<c3
-R2
-I5zAgl9j7oFV3X`VcIYS`30
+!s100 kga`klMNnfkgX4UfzR>>z3
+IVnR:feleM43hh`L?hW1H:1
 R3
-R0
-Z13 w1678116912
-Z14 8C:/Users/chada/Desktop/lab5/lab5_main.v
-Z15 FC:/Users/chada/Desktop/lab5/lab5_main.v
-!i122 20
-L0 1 10
-R6
+Z13 dC:/Users/chada/OneDrive/Desktop/the joke/cpe8_activities/lab5
+Z14 w1678155238
+Z15 8C:/Users/chada/OneDrive/Desktop/the joke/cpe8_activities/lab5/lab5_main.v
+Z16 FC:/Users/chada/OneDrive/Desktop/the joke/cpe8_activities/lab5/lab5_main.v
+L0 1
+Z17 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z16 !s108 1678117979.000000
-Z17 !s107 C:/Users/chada/Desktop/lab5/lab5_main.v|
-Z18 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/chada/Desktop/lab5/lab5_main.v|
+Z18 !s108 1678155259.000000
+Z19 !s107 C:/Users/chada/OneDrive/Desktop/the joke/cpe8_activities/lab5/lab5_main.v|
+Z20 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/chada/OneDrive/Desktop/the joke/cpe8_activities/lab5/lab5_main.v|
 !i113 1
 R10
 R11
 vDabble
 R12
 !i10b 1
-!s100 ZKjUKKXb5l81=E:zS6oS31
-R2
-I:d4jkCVfCf1;UYnkEoG[D2
+!s100 VgVdElQ?YEfVJX414O?RG3
+IS]n;J0mDnniT1PQCdT@=U3
 R3
-R0
 R13
 R14
 R15
-!i122 20
-L0 12 10
-R6
+R16
+L0 12
+R17
 r1
 !s85 0
 31
-R16
-R17
 R18
+R19
+R20
 !i113 1
 R10
 R11
 n@dabble
-vdibbleDouble
-R12
-!i10b 1
-!s100 :]f1>N^MN@bB7=IYPABHi1
-R2
-I1K<j]V2HQUXT[F@:7^RQa3
-R3
-R0
-R13
-R14
-R15
-!i122 20
-L0 24 33
-R6
-r1
-!s85 0
-31
-R16
-R17
-R18
-!i113 1
-R10
-R11
-ndibble@double
 vDibbleDouble
 R1
 !i10b 1
@@ -137,8 +109,8 @@ IONon3=Qe7HI]<BESU=5DX3
 R3
 R0
 w1678114479
-R14
-R15
+Z21 8C:/Users/chada/Desktop/lab5/lab5_main.v
+Z22 FC:/Users/chada/Desktop/lab5/lab5_main.v
 !i122 6
 L0 24 26
 R6
@@ -146,55 +118,97 @@ r1
 !s85 0
 31
 R7
-R17
-R18
+Z23 !s107 C:/Users/chada/Desktop/lab5/lab5_main.v|
+Z24 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/chada/Desktop/lab5/lab5_main.v|
 !i113 1
 R10
 R11
 n@dibble@double
-vmain
+vdibbleDouble
 R12
+!i10b 1
+!s100 Nao=K<YLPcJEBS`>72Y:=1
+ISP`a198:1QEiA2IEc`Ii11
+R3
+R13
+R14
+R15
+R16
+L0 24
+R17
+r1
+!s85 0
+31
+R18
+R19
+R20
+!i113 1
+R10
+R11
+ndibble@double
+vmain
+!s110 1678117979
 !i10b 1
 !s100 ADTb02EHf4U4[B4=F3;Z23
 R2
 ID2b@b]3cF8a5Wl@c9gU322
 R3
 R0
-R13
-R14
-R15
+w1678116912
+R21
+R22
 !i122 20
 L0 59 32
 R6
 r1
 !s85 0
 31
-R16
-R17
-R18
+!s108 1678117979.000000
+R23
+R24
 !i113 1
 R10
 R11
-vMultiplexer4
+vMain
 R12
 !i10b 1
-!s100 ha?lG`7=@2R2HlQO?`=j32
-R2
-I3eI3:QRnT?_8>NT[o4PoI0
+!s100 B2QjT?HEZ5EVEaS@MM<]d0
+IT^Ui82J<nWzTXlHEXo_cP1
 R3
-R0
 R13
 R14
 R15
-!i122 20
-L0 92 15
-R6
+R16
+L0 59
+R17
 r1
 !s85 0
 31
-R16
-R17
 R18
+R19
+R20
+!i113 1
+R10
+R11
+n@main
+vMultiplexer4
+R12
+!i10b 1
+!s100 XR1Rgk^P?az?3[APQm[J82
+I_[7aQD=NCLT7CV=JlZka:1
+R3
+R13
+R14
+R15
+R16
+L0 98
+R17
+r1
+!s85 0
+31
+R18
+R19
+R20
 !i113 1
 R10
 R11
@@ -202,115 +216,105 @@ n@multiplexer4
 vmux
 R12
 !i10b 1
-!s100 7nz@EoF5KSm@h_RJ4VK4A3
-R2
-I0Um<Ma=4WQoMIP`Jb^mQK3
+!s100 [e7CeHB8IE:n`SQ[:5:a80
+I<kG7Rek;;ggK^_?0IFRRZ2
 R3
-R0
 R13
 R14
 R15
-!i122 20
-L0 108 22
-R6
+R16
+L0 114
+R17
 r1
 !s85 0
 31
-R16
-R17
 R18
+R19
+R20
 !i113 1
 R10
 R11
 vsegment7hex
-Z19 !s110 1678118067
+R12
 !i10b 1
-!s100 23NNH^n3Td[lQ:;2fgCGc3
-R2
-IleICfdV^O9Gb`4gL>:hbl2
+!s100 7hOToLohLLozO48GczA<72
+IYW0NaaUX>]5kI>_R;BEZ10
 R3
-R0
-Z20 w1678118063
-R4
-R5
-!i122 25
-L0 35 26
-R6
+R13
+Z25 w1678153188
+Z26 8C:/Users/chada/OneDrive/Desktop/the joke/cpe8_activities/lab5/lab5_ext.v
+Z27 FC:/Users/chada/OneDrive/Desktop/the joke/cpe8_activities/lab5/lab5_ext.v
+L0 42
+R17
 r1
 !s85 0
 31
-Z21 !s108 1678118066.000000
-R8
-R9
+R18
+Z28 !s107 C:/Users/chada/OneDrive/Desktop/the joke/cpe8_activities/lab5/lab5_ext.v|
+Z29 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/chada/OneDrive/Desktop/the joke/cpe8_activities/lab5/lab5_ext.v|
 !i113 1
 R10
 R11
 vsegment7input3
-R19
+!s110 1678152063
 !i10b 1
-!s100 V1_Y]aTC_DfSmOZ<eJm8f0
-R2
-IU`;]<NkcQC2VjUgF8Q1Fl3
+!s100 BWA^mDJV5Fcndl:@SJLU31
+I9e?9?<2hg`:h;UEKT8?@`1
 R3
-R0
-R20
-R4
-R5
-!i122 25
-L0 1 19
-R6
+R13
+w1678152048
+R26
+R27
+L0 1
+R17
 r1
 !s85 0
 31
-R21
-R8
-R9
+!s108 1678152063.000000
+R28
+R29
 !i113 1
 R10
 R11
 vsegment7input4
-R19
+R12
 !i10b 1
-!s100 DMzQ[MnXVFlnQ:Gk<2ZFl1
-R2
-IMobCUfGVLcD8<PRgeO:Rl3
+!s100 US?Ro]Ubf=;3a`_cHYU;01
+I=?QeSSjcb_1JPJCb=65j]3
 R3
-R0
-R20
-R4
-R5
-!i122 25
-L0 21 13
-R6
+R13
+R25
+R26
+R27
+L0 28
+R17
 r1
 !s85 0
 31
-R21
-R8
-R9
+R18
+R28
+R29
 !i113 1
 R10
 R11
 vTestBench
 R12
 !i10b 1
-!s100 G[:;7z<5aO7jXLW5JSg:61
-R2
-IZ42E<Xj1JUeib]IDS?7Z?1
+!s100 IVU1mSI8H?M@90I1ZGL101
+I_c>ZJ4kUo;]S:L0]W<d1U3
 R3
-R0
-w1678116598
-8C:/Users/chada/Desktop/lab5/lab5_testbench.v
-FC:/Users/chada/Desktop/lab5/lab5_testbench.v
-!i122 21
-L0 1 71
-R6
+R13
+w1678150119
+8C:/Users/chada/OneDrive/Desktop/the joke/cpe8_activities/lab5/lab5_testbench.v
+FC:/Users/chada/OneDrive/Desktop/the joke/cpe8_activities/lab5/lab5_testbench.v
+L0 1
+R17
 r1
 !s85 0
 31
-R16
-!s107 C:/Users/chada/Desktop/lab5/lab5_testbench.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/chada/Desktop/lab5/lab5_testbench.v|
+R18
+!s107 C:/Users/chada/OneDrive/Desktop/the joke/cpe8_activities/lab5/lab5_testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/chada/OneDrive/Desktop/the joke/cpe8_activities/lab5/lab5_testbench.v|
 !i113 1
 R10
 R11
